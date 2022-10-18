@@ -14,7 +14,7 @@ RUN apt-get update \
 RUN ./genmonmaint.sh -i
 RUN pip install spidev
 RUN rm -rf /var/log \
-	&& ln -sf /config/genmon/log /var/log  \
-	&& ln -sf /config/genmon/config /etc/genmon
+    && ln -sf /config/genmon/log /var/log  \
+    && ln -sf /config/genmon/config /etc/genmon
 
 CMD bash -c "mkdir -p /config/genmon/log /config/genmon/config && /app/startgenmon.sh -p 3 start && sleep infinity"
