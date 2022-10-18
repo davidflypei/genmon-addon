@@ -1,0 +1,13 @@
+{
+  "name": "Genmon",
+  "version": "V1.18.14",
+  "description": "Genmon addon for Hassio",
+  "url": "https://github.com/hass-emulated-hue/core",
+  "slug": "genmon",
+  "stage": "experimental",
+  "startup": "application",
+  "boot": "auto",
+  "arch": ["amd64"],
+  "map": ["config:rw"],
+  "init": false
+}
