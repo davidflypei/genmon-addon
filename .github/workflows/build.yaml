@@ -30,7 +30,7 @@ jobs:
           else
             NEED_BUILD=true
           fi
-          echo "::set-output name=build_version::${GENMON_VERSION}"
+          echo "::set-output name=build_version::${GENMON_VERSION_LATEST}"
           echo "::set-output name=build_required::${NEED_BUILD}"
           echo Last built version: ${GENMON_VERSION_LAST_BUILT}
           echo Latest build version: ${GENMON_VERSION_LATEST}
