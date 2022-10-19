@@ -69,7 +69,7 @@ jobs:
         run: |
           set -x
           docker build \
-            --build-arg GENMON_VERSION=${GENMON_VERSION} \
+            --build-arg GENMON_VERSION=${{ env.GENMON_VERSION }} \
             --tag ci:${{ github.run_number }} \
             --progress plain \
             --file ./genmon/Dockerfile \
@@ -141,8 +141,8 @@ jobs:
       - name: Push image (version)
         run: |
           set -x
-          docker tag ci:${{ github.run_number }} ${{ matrix.registry.repo }}:${GENMON_VERSION}
-          docker push ${{ matrix.registry.repo }}:${GENMON_VERSION}
+          docker tag ci:${{ github.run_number }} ${{ matrix.registry.repo }}:${{ env.GENMON_VERSION }}
+          docker push ${{ matrix.registry.repo }}:${{ env.GENMON_VERSION }}
 
   commit:
     name: Commit Version
@@ -159,7 +159,7 @@ jobs:
 
       - name: Save Version Number
         run: |
-          jq '.version = "${GENMON_VERSION}"' config.json > config.json.tmp
+          jq '.version = "${{ env.GENMON_VERSION }}"' config.json > config.json.tmp
           mv config.json.tmp config.json
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
