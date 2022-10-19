@@ -14,6 +14,9 @@ jobs:
       build-version: ${{ steps.set-version.outputs.build_version }}
       build-required: ${{ steps.set-version.outputs.build_required }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Get Genmon Build Version
         id: set-version
         run: |
