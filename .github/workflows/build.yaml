@@ -159,7 +159,7 @@ jobs:
 
       - name: Save Version Number
         run: |
-          jq '.version = "${{ env.GENMON_VERSION }}" | .image = "ghcr.io/alexyao2015/genmon-addon:${{ env.GENMON_VERSION }}"' genmon/config.json > genmon/config.json.tmp
+          jq '.version = "${{ env.GENMON_VERSION }}"' genmon/config.json > genmon/config.json.tmp
           mv genmon/config.json.tmp genmon/config.json
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
