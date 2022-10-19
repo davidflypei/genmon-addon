@@ -64,14 +64,15 @@ jobs:
           key: ${{ env.GENMON_VERSION }}-${{ github.sha }}
           restore-keys: |
             ${{ env.GENMON_VERSION }}-
-      - name: Build ZoneMinder
+
+      - name: Build
         run: |
           set -x
           docker build \
             --build-arg GENMON_VERSION=${GENMON_VERSION} \
             --tag ci:${{ github.run_number }} \
             --progress plain \
-            --file ./Dockerfile \
+            --file ./genmon/Dockerfile \
             --cache-from type=local,src=/tmp/.buildx-cache \
             --cache-to type=local,dest=/tmp/.buildx-cache-new \
             --load \
@@ -133,11 +134,13 @@ jobs:
 
       - name: Push image (run number)
         run: |
+          set -x
           docker tag ci:${{ github.run_number }} ${{ matrix.registry.repo }}:${{ github.run_number }}
           docker push ${{ matrix.registry.repo }}:${{ github.run_number }}
 
       - name: Push image (version)
         run: |
+          set -x
           docker tag ci:${{ github.run_number }} ${{ matrix.registry.repo }}:${GENMON_VERSION}
           docker push ${{ matrix.registry.repo }}:${GENMON_VERSION}
 
