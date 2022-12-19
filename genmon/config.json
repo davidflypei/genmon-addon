@@ -1,6 +1,6 @@
 {
   "name": "Genmon",
-  "version": "e2360261ee471e1d02847a6448d1c8c551323c5e",
+  "version": "64eeddafbad42b7bd2461f323303dbd85c12bf57",
   "description": "Genmon addon for Hassio",
   "url": "https://github.com/hass-emulated-hue/core",
   "slug": "genmon",
