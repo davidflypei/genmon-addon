@@ -1,12 +1,17 @@
 ---
 name: Genmon
-version: a45a9eb58ca6ef1f2348103175d0d94086c1f67e
-description: "Genmon addon for Hassio"
-url: "https://github.com/davidflypei/genmon-addon"
-slug: "genmon"
-stage: "experimental"
-startup: "application"
-boot: "auto"
+version: 1.0.0
+description: Genmon addon for Hassio
+url: https://github.com/davidflypei/genmon-addon
+uart: true
+udev: true
+usb: true
+host_network: false
+hassio_api: true
+slug: genmon
+stage: experimental
+startup: application
+boot: auto
 arch:
   - amd64
   - i386
@@ -17,4 +22,4 @@ map:
   - config:rw
 ingress: true
 ingress_port: 8000
-image: "ghcr.io/alexyao2015/genmon-addon"
+image: ghcr.io/alexyao2015/genmon-addon
