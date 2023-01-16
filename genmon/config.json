@@ -8,7 +8,8 @@
   "startup": "application",
   "boot": "auto",
   "arch": [
-    "amd64"
+    "amd64",
+    "armhf"
   ],
   "map": [
     "config:rw"
