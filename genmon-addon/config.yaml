@@ -21,4 +21,6 @@ arch:
   - armv7
   - armhf
   - aarch64
+ingress: true
+ingress_port: 8000
 image: ghcr.io/alexyao2015/genmon-addon
