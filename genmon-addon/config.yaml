@@ -21,3 +21,4 @@ arch:
   - armv7
   - armhf
   - aarch64
+image: ghcr.io/alexyao2015/genmon-addon
