@@ -9,7 +9,10 @@ startup: "application"
 boot: "auto"
 arch:
   - amd64
+  - i386
+  - armv7
   - armhf
+  - aarch64
 map:
   - config:rw
 ingress: true
