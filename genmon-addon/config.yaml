@@ -1,6 +1,6 @@
 ---
 name: Genmon
-version: a45a9eb58ca6ef1f2348103175d0d94086c1f67e
+version: 1.0.0
 slug: genmon
 panel_icon: mdi:gauge
 description: Genmon addon for Hassio
